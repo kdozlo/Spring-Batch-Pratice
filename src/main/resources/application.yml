@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: springBatch
+
+  batch:
+    jdbc:
+      initialize-schema: always
+    job:
+      enabled: false
+
+datasource-meta:
+  jdbc-url: jdbc:mysql://localhost:3306/practice_metadata?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
+  username: root
+  password: root
+  driver-class-name: com.mysql.cj.jdbc.Driver
+
+datasource-data:
+  jdbc-url: jdbc:mysql://localhost:3306/practice_data?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
+  username: root
+  password: root
+  driver-class-name: com.mysql.cj.jdbc.Driver
