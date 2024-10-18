@@ -28,4 +28,16 @@ public class MainController {
 
         return ResponseEntity.ok("Success");
     }
+
+    @GetMapping("/second")
+    public ResponseEntity<String> secondApi(@RequestParam("value") String value) throws Exception {
+
+        JobParameters jobParameters = new JobParametersBuilder()
+                .addString("date", value)
+                .toJobParameters();
+
+        jobLauncher.run(jobRegistry.getJob("secondJob"), jobParameters);
+
+        return ResponseEntity.ok("Success");
+    }
 }
